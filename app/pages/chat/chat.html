@@ -1,0 +1,21 @@
+<ion-navbar *navbar>
+    
+  <ion-title>
+  </ion-title>
+</ion-navbar>
+
+<ion-content>
+       <ion-item *ngFor = "#mes of messageArray | async">   
+           {{mes.message}}
+        </ion-item>
+    
+    
+<form [ngFormModel]='form' (ngSubmit) ='sendMessage(form.value)'>
+    <ion-input  type="text" placeholder="your message" [ngFormControl]="message"></ion-input>
+    <button>send</button>
+    </form>
+<button (click)="logoutUser()">logout</button>
+
+
+</ion-content>
+

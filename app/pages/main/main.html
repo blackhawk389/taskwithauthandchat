@@ -1,0 +1,44 @@
+<ion-toolbar>  
+    <button  (click)= "addpost()">Add Post</button>
+  <ion-title>
+  </ion-title>
+  <button  (click)= "logoutUser()">Logout</button>
+</ion-toolbar>
+
+<ion-content>
+    
+
+<ion-card *ngFor="#p of posts | async">
+  <ion-card-header>
+    {{p.title}}
+  </ion-card-header>
+
+
+  <ion-card-content #showComments showComments.value=false>
+   
+      <ion-item *ngIf="showComments" *ngFor = "#c of comments[p.$key] | async">
+          {{c && c.comment}}
+          </ion-item>
+     
+     
+     <form [ngFormModel]='form' (ngSubmit) ='addcomment(p, form.value)'>
+    <ion-input  type="text" placeholder="your comment"  [ngFormControl]="comment"></ion-input>
+    <button>add comment</button>
+    </form>
+    
+  </ion-card-content>
+
+</ion-card>    
+
+
+    
+    <!-- here a text box with button of add comment -->
+  <!--  is there in text box show content from firebase-->
+  
+  <!-- in when add comment button is pressed -->
+       
+  
+    <button block (click)= "startchat()">Chat</button>
+
+</ion-content>
+

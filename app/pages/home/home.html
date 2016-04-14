@@ -1,0 +1,38 @@
+<ion-toolbar>
+  <ion-title>
+  </ion-title>
+</ion-toolbar>
+
+<ion-content>
+    
+<button (click) = "enableRegister()">Register</button>
+
+<form [ngFormModel]='form' (ngSubmit) ='registerUser(form.value)' *ngIf ="istrueReg">
+    <ion-input  type="text" placeholder="Email" [ngFormControl]="username"></ion-input>
+    <ion-input  type="password" placeholder="Password" [ngFormControl]="password"></ion-input>
+    <button>Register</button>
+    </form>
+ 
+ <br> 
+<button (click) = "enable()">Login</button>
+
+<form [ngFormModel]='form2' (ngSubmit) ='loginUser(form2.value)' *ngIf = "istrue">
+    <ion-input  type="text" placeholder="username" [ngFormControl]="user"></ion-input>
+    <ion-input  type="password" placeholder="Password" [ngFormControl]="pass"></ion-input>
+    <button>Login</button>
+    </form>
+
+
+     
+      
+
+
+    
+    <!--<-- here a text box with button of add comment -->
+  <!--<--  is there in text box show content from firebase-->
+  
+  <!--<-- in when add comment button is pressed -->
+      
+
+</ion-content>
+
